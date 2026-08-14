@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 46px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: #252525;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 16px;
+    border: 2px dashed #667eea;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    background: #f8f9ff;
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    resize: vertical;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    border-radius: 12px;
+    background: #667eea;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #5568d9;
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.results {
+    margin-top: 45px;
+    padding-top: 35px;
+    border-top: 2px solid #eeeeee;
+}
+
+.results > h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+/* Overall Score */
+
+.score {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 50%;
+    background: #667eea;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.35);
+}
+
+.score-text {
+    text-align: center;
+    margin: 15px 0 30px;
+    color: #666;
+    font-size: 16px;
+}
+
+
+/* Score Cards */
+
+.score-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.score-card {
+    background: #f8f9ff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #eeeeee;
+}
+
+.score-card h3 {
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.score-card strong {
+    font-size: 30px;
+    color: #667eea;
+}
+
+
+/* Result Sections */
+
+.result-section {
+    margin-top: 25px;
+    padding: 22px;
+    background: #f8f9ff;
+    border-radius: 15px;
+}
+
+.result-section h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+
+/* Skills */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    padding: 9px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.matched {
+    background: #d4edda;
+    color: #155724;
+}
+
+.missing {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+
+/* Suggestions */
+
+.suggestions {
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 15px;
+    background: #fff3cd;
+    color: #856404;
+}
+
+.suggestions h3 {
+    margin-bottom: 12px;
+}
+
+.suggestions p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .header h1 {
+        font-size: 34px;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .score-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .score {
+        width: 125px;
+        height: 125px;
+        font-size: 32px;
+    }
+
+}
+/* =========================
+   JOB ROLE
+========================= */
+
+.role-card {
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0 30px;
+    border-radius: 15px;
+    background: #f1f3ff;
+    border: 1px solid #e1e4ff;
+}
+
+.role-card p {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.role-card h3 {
+    font-size: 24px;
+    color: #667eea;
+}
+
+
+/* =========================
+   STRENGTHS & WEAKNESSES
+========================= */
+
+.analysis-card {
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 15px;
+}
+
+.analysis-card h3 {
+    margin-bottom: 15px;
+}
+
+.analysis-card p {
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.strengths {
+    background: #eaf8ee;
+    color: #245c35;
+}
+
+.weaknesses {
+    background: #fff4e5;
+    color: #805b22;
+}
+/* =========================
+   DOWNLOAD REPORT
+========================= */
+
+.download-form {
+    margin-top: 30px;
+}
+
+.download-button {
+    background: #764ba2;
+}
+
+.download-button:hover {
+    background: #633d87;
+}
