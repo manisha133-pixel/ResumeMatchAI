@@ -1,3 +1,4 @@
+```css
 * {
     margin: 0;
     padding: 0;
@@ -5,23 +6,18 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fb;
-    color: #172033;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     min-height: 100vh;
-    padding: 0;
+    padding: 40px 20px;
 }
-
-/* =========================
-   MAIN CONTAINER
-========================= */
 
 .container {
     width: 100%;
-    max-width: 1050px;
+    max-width: 950px;
     margin: auto;
-    padding: 55px 25px 70px;
 }
+
 
 /* =========================
    HEADER
@@ -29,50 +25,41 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 42px;
+    color: white;
+    margin-bottom: 30px;
 }
 
 .header h1 {
-    font-size: 48px;
-    font-weight: 800;
-    letter-spacing: -1.5px;
-    color: #111827;
-    margin-bottom: 12px;
+    font-size: 46px;
+    margin-bottom: 10px;
 }
 
 .header p {
     font-size: 18px;
-    color: #64748b;
-    line-height: 1.6;
 }
+
 
 /* =========================
    MAIN CARD
 ========================= */
 
 .card {
-    background: #ffffff;
-    padding: 42px;
-    border-radius: 24px;
-    border: 1px solid #e7eaf0;
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    background: white;
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
-/* =========================
-   FORM
-========================= */
-
 .card h2 {
-    font-size: 21px;
-    color: #172033;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    color: #252525;
 }
 
 .subtitle {
-    color: #64748b;
-    font-size: 14px;
-    margin-bottom: 16px;
+    color: #777;
+    margin-bottom: 20px;
 }
+
 
 /* =========================
    FILE UPLOAD
@@ -80,24 +67,14 @@ body {
 
 input[type="file"] {
     width: 100%;
-    padding: 18px;
-    margin-bottom: 32px;
-
-    border: 2px dashed #cbd5e1;
-    border-radius: 14px;
-
-    background: #f8fafc;
-    color: #475569;
-
+    padding: 16px;
+    border: 2px dashed #667eea;
+    border-radius: 12px;
+    margin-bottom: 30px;
     cursor: pointer;
-    font-size: 14px;
-    transition: 0.25s ease;
+    background: #f8f9ff;
 }
 
-input[type="file"]:hover {
-    border-color: #6366f1;
-    background: #f5f7ff;
-}
 
 /* =========================
    JOB DESCRIPTION
@@ -105,36 +82,21 @@ input[type="file"]:hover {
 
 textarea {
     width: 100%;
-    min-height: 190px;
-
-    padding: 18px;
-
-    border: 1px solid #d9dee8;
-    border-radius: 14px;
-
-    background: #ffffff;
-
+    height: 180px;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
     resize: vertical;
-
     font-size: 15px;
-    line-height: 1.6;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    margin-bottom: 22px;
-
-    transition: 0.25s ease;
-}
-
-textarea::placeholder {
-    color: #94a3b8;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
 }
 
 textarea:focus {
     outline: none;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    border-color: #667eea;
 }
+
 
 /* =========================
    BUTTON
@@ -142,42 +104,38 @@ textarea:focus {
 
 button {
     width: 100%;
-    padding: 16px 20px;
-
+    padding: 17px;
     border: none;
     border-radius: 12px;
-
-    background: #4f46e5;
+    background: #667eea;
     color: white;
-
-    font-size: 16px;
-    font-weight: 700;
-
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
-
-    transition: 0.25s ease;
+    transition: 0.3s;
 }
 
 button:hover {
-    background: #4338ca;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    background: #5568d9;
 }
+
 
 /* =========================
    RESULTS
 ========================= */
 
 .results {
-    margin-top: 50px;
-    padding-top: 40px;
-    border-top: 1px solid #e5e7eb;
+    margin-top: 45px;
+    padding-top: 35px;
+    border-top: 2px solid #eeeeee;
 }
 
 .results > h2 {
     text-align: center;
-    font-size: 25px;
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 }
+
 
 /* =========================
    JOB ROLE
@@ -185,100 +143,126 @@ button:hover {
 
 .role-card {
     text-align: center;
-
-    padding: 24px;
+    padding: 20px;
     margin: 20px 0 30px;
-
-    border-radius: 16px;
-
-    background: #f5f7ff;
-    border: 1px solid #e0e7ff;
+    border-radius: 15px;
+    background: #f1f3ff;
+    border: 1px solid #e1e4ff;
 }
 
 .role-card p {
-    color: #64748b;
+    color: #666;
     margin-bottom: 8px;
-    font-size: 14px;
 }
 
 .role-card h3 {
-    font-size: 25px;
-    color: #4f46e5;
+    font-size: 24px;
+    color: #667eea;
 }
 
+
 /* =========================
-   OVERALL SCORE
+   CIRCULAR SCORE
 ========================= */
 
-.score {
-    width: 155px;
-    height: 155px;
+.score-circle {
+    width: 180px;
+    height: 180px;
 
-    margin: auto;
+    margin: 25px auto 15px;
 
     border-radius: 50%;
 
-    background: #4f46e5;
-    color: white;
+    background:
+        conic-gradient(
+            #667eea var(--score),
+            #e8eaff var(--score)
+        );
 
     display: flex;
-    justify-content: center;
+
     align-items: center;
+    justify-content: center;
 
-    font-size: 40px;
-    font-weight: 800;
+    position: relative;
 
-    box-shadow: 0 12px 30px rgba(79, 70, 229, 0.25);
+    box-shadow:
+        0 10px 30px rgba(102, 126, 234, 0.25);
 }
+
+
+/* White center of circle */
+
+.score-inner {
+    width: 140px;
+    height: 140px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Percentage */
+
+.score-inner span {
+    font-size: 38px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+
+/* Score text */
 
 .score-text {
     text-align: center;
 
-    margin: 15px 0 32px;
+    margin: 12px 0 30px;
 
-    color: #64748b;
-    font-size: 15px;
+    color: #666;
+
+    font-size: 16px;
+    font-weight: 500;
 }
 
+
 /* =========================
-   SCORE GRID
+   SCORE CARDS
 ========================= */
 
 .score-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 20px;
-
     margin-bottom: 25px;
 }
 
 .score-card {
-    background: #f8fafc;
-
+    background: #f8f9ff;
     padding: 25px;
-
-    border-radius: 16px;
-
+    border-radius: 15px;
     text-align: center;
-
-    border: 1px solid #e5e7eb;
+    border: 1px solid #eeeeee;
 }
 
 .score-card h3 {
-    color: #475569;
-
-    font-size: 16px;
-
+    color: #555;
     margin-bottom: 12px;
 }
 
 .score-card strong {
     font-size: 30px;
-
-    color: #4f46e5;
+    color: #667eea;
 }
+
 
 /* =========================
    RESULT SECTIONS
@@ -286,23 +270,16 @@ button:hover {
 
 .result-section {
     margin-top: 25px;
-
-    padding: 24px;
-
-    background: #f8fafc;
-
-    border-radius: 16px;
-
-    border: 1px solid #e5e7eb;
+    padding: 22px;
+    background: #f8f9ff;
+    border-radius: 15px;
 }
 
 .result-section h3 {
     margin-bottom: 15px;
-
-    color: #1e293b;
-
-    font-size: 17px;
+    color: #333;
 }
+
 
 /* =========================
    SKILLS
@@ -310,42 +287,36 @@ button:hover {
 
 .skills {
     display: flex;
-
     flex-wrap: wrap;
-
-    gap: 9px;
+    gap: 10px;
 }
 
 .skill {
-    padding: 8px 13px;
-
+    padding: 9px 15px;
     border-radius: 20px;
-
-    font-size: 13px;
-
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .matched {
-    background: #dcfce7;
-    color: #166534;
+    background: #d4edda;
+    color: #155724;
 }
 
 .missing {
-    background: #fee2e2;
-    color: #991b1b;
+    background: #f8d7da;
+    color: #721c24;
 }
 
+
 /* =========================
-   STRENGTHS / WEAKNESSES
+   STRENGTHS & WEAKNESSES
 ========================= */
 
 .analysis-card {
     margin-top: 25px;
-
-    padding: 24px;
-
-    border-radius: 16px;
+    padding: 22px;
+    border-radius: 15px;
 }
 
 .analysis-card h3 {
@@ -354,40 +325,30 @@ button:hover {
 
 .analysis-card p {
     line-height: 1.6;
-
     margin-bottom: 8px;
 }
 
 .strengths {
-    background: #ecfdf5;
-    color: #166534;
-
-    border: 1px solid #bbf7d0;
+    background: #eaf8ee;
+    color: #245c35;
 }
 
 .weaknesses {
-    background: #fff7ed;
-    color: #9a3412;
-
-    border: 1px solid #fed7aa;
+    background: #fff4e5;
+    color: #805b22;
 }
 
+
 /* =========================
-   RECOMMENDATIONS
+   SUGGESTIONS
 ========================= */
 
 .suggestions {
     margin-top: 25px;
-
-    padding: 24px;
-
-    border-radius: 16px;
-
-    background: #fffbeb;
-
-    color: #854d0e;
-
-    border: 1px solid #fde68a;
+    padding: 22px;
+    border-radius: 15px;
+    background: #fff3cd;
+    color: #856404;
 }
 
 .suggestions h3 {
@@ -396,9 +357,9 @@ button:hover {
 
 .suggestions p {
     margin-bottom: 8px;
-
-    line-height: 1.6;
+    line-height: 1.5;
 }
+
 
 /* =========================
    DOWNLOAD REPORT
@@ -409,12 +370,13 @@ button:hover {
 }
 
 .download-button {
-    background: #111827;
+    background: #764ba2;
 }
 
 .download-button:hover {
-    background: #1f2937;
+    background: #633d87;
 }
+
 
 /* =========================
    MOBILE
@@ -422,12 +384,12 @@ button:hover {
 
 @media (max-width: 650px) {
 
-    .container {
-        padding: 35px 15px 50px;
+    body {
+        padding: 20px 10px;
     }
 
-    .header {
-        margin-bottom: 30px;
+    .card {
+        padding: 25px;
     }
 
     .header h1 {
@@ -438,24 +400,22 @@ button:hover {
         font-size: 15px;
     }
 
-    .card {
-        padding: 25px 20px;
-
-        border-radius: 18px;
-    }
-
     .score-grid {
         grid-template-columns: 1fr;
     }
 
-    .score {
-        width: 125px;
-        height: 125px;
-
-        font-size: 32px;
+    .score-circle {
+        width: 145px;
+        height: 145px;
     }
 
-    .role-card h3 {
-        font-size: 21px;
+    .score-inner {
+        width: 112px;
+        height: 112px;
+    }
+
+    .score-inner span {
+        font-size: 30px;
     }
 }
+```
