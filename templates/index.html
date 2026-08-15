@@ -1,9 +1,8 @@
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ResumeMatch AI</title>
@@ -12,137 +11,162 @@
           href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-
 <body>
 
-<div class="page">
+<!-- =========================
+     NAVBAR
+========================= -->
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+<nav class="navbar">
 
-    <header class="header">
+    <div class="brand">
+        <div class="brand-icon">📄</div>
 
-        <div class="brand">
-            <div class="brand-icon">✓</div>
+        <div>
+            <h2>ResumeMatch <span>AI</span></h2>
+            <small>AI Powered Resume Analyzer</small>
+        </div>
+    </div>
 
-            <div>
-                <h1>ResumeMatch AI</h1>
-                <p>Resume Analyzer & Job Matcher</p>
-            </div>
+    <div class="nav-badge">
+        ✨ Smart Resume Analysis
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="hero-badge">
+            🚀 AI POWERED
         </div>
 
-    </header>
-
-
-    <!-- =========================
-         HERO SECTION
-    ========================== -->
-
-    <section class="hero">
-
-        <h2>
+        <h1>
             Match Your Resume
+            <br>
             <span>With Your Dream Job</span>
-        </h2>
+        </h1>
 
         <p>
-            Upload your resume and compare it with a job description
-            to discover your skill match, missing skills and improvement areas.
+            Analyze your resume with AI and discover your
+            skills match, missing skills and improvement areas.
         </p>
 
-    </section>
+
+        <!-- FEATURE PILLS -->
+
+        <div class="feature-pills">
+
+            <div class="feature-pill">
+                🐍 Python
+            </div>
+
+            <div class="feature-pill">
+                📊 Data Analysis
+            </div>
+
+            <div class="feature-pill">
+                🗄️ SQL
+            </div>
+
+            <div class="feature-pill">
+                📈 Power BI
+            </div>
+
+            <div class="feature-pill">
+                🤖 Machine Learning
+            </div>
+
+        </div>
+
+
+        <div class="hero-tagline">
+            Match. Improve. <span>Get Hired.</span>
+        </div>
+
+    </div>
 
 
     <!-- =========================
-         MAIN CARD
-    ========================== -->
+         ANALYZER CARD
+    ========================= -->
 
-    <main class="main-card">
+    <div class="analyzer-card">
 
-        <!-- =========================
-             FORM
-        ========================== -->
+        <div class="card-heading">
+
+            <div class="heading-icon">
+                ✨
+            </div>
+
+            <div>
+                <h2>Resume Analyzer</h2>
+
+                <p>
+                    Compare your resume with a job description
+                </p>
+            </div>
+
+        </div>
+
 
         <form method="POST"
               enctype="multipart/form-data">
 
 
-            <!-- RESUME UPLOAD -->
+            <!-- UPLOAD -->
 
-            <div class="form-section">
+            <div class="input-section">
 
-                <div class="section-heading">
+                <label>
+                    📄 Upload Your Resume
+                </label>
 
-                    <div class="heading-icon resume-icon">
-                        📄
+                <div class="upload-box">
+
+                    <div class="upload-icon">
+                        ↑
                     </div>
 
-                    <div>
-                        <h3>Upload Your Resume</h3>
+                    <h3>
+                        Choose your resume
+                    </h3>
 
-                        <p>
-                            Upload your resume in PDF format.
-                        </p>
-                    </div>
+                    <p>
+                        PDF files only
+                    </p>
+
+                    <label class="browse-button">
+
+                        Browse File
+
+                        <input
+                            type="file"
+                            name="resume"
+                            accept=".pdf"
+                            required
+                        >
+
+                    </label>
 
                 </div>
-
-
-                <label class="upload-box">
-
-                    <input
-                        type="file"
-                        name="resume"
-                        accept=".pdf"
-                        required
-                    >
-
-                    <div class="upload-content">
-
-                        <div class="upload-icon">
-                            ↑
-                        </div>
-
-                        <h4>
-                            Choose your resume
-                        </h4>
-
-                        <p>
-                            PDF files only
-                        </p>
-
-                        <span class="browse-button">
-                            Browse File
-                        </span>
-
-                    </div>
-
-                </label>
 
             </div>
 
 
             <!-- JOB DESCRIPTION -->
 
-            <div class="form-section">
+            <div class="input-section">
 
-                <div class="section-heading">
-
-                    <div class="heading-icon job-icon">
-                        💼
-                    </div>
-
-                    <div>
-                        <h3>Job Description</h3>
-
-                        <p>
-                            Paste the job description below.
-                        </p>
-                    </div>
-
-                </div>
-
+                <label>
+                    💼 Job Description
+                </label>
 
                 <textarea
                     name="job_description"
@@ -160,456 +184,539 @@
                 class="analyze-button"
             >
 
-                <span>Analyze Resume</span>
+                🔍 Analyze Resume
 
-                <span class="arrow">
-                    →
-                </span>
+                <span>→</span>
 
             </button>
 
         </form>
 
+    </div>
 
-        <!-- =========================
-             RESULTS
-        ========================== -->
+</section>
 
-        {% if result %}
 
-        <section class="results">
+<!-- =========================
+     RESULTS
+========================= -->
 
+{% if result %}
 
-            <div class="results-title">
+<section class="results-section">
 
-                <div class="result-icon">
-                    📊
-                </div>
+    <div class="results-header">
 
-                <div>
+        <div class="results-icon">
+            📊
+        </div>
 
-                    <h2>
-                        Resume Analysis
-                    </h2>
+        <div>
 
-                    <p>
-                        Here's how well your resume matches the job.
-                    </p>
+            <h2>Resume Analysis</h2>
 
-                </div>
+            <p>
+                Here's how well your resume matches the job.
+            </p>
 
-            </div>
+        </div>
 
+    </div>
 
-            <!-- =========================
-                 DETECTED JOB ROLE
-            ========================== -->
 
-            <div class="role-card">
+    <!-- JOB ROLE -->
 
-                <div>
+    <div class="detected-role">
 
-                    <span>
-                        🎯 Detected Job Role
-                    </span>
+        <span>🎯 Detected Job Role</span>
 
-                    <h3>
-                        {{ result.role }}
-                    </h3>
+        <h2>
+            {{ result.role }}
+        </h2>
 
-                </div>
-
-            </div>
-
-
-            <!-- =========================
-                 OVERALL SCORE
-            ========================== -->
-
-            <div class="overall-score">
-
-                <div
-                    class="score-circle"
-                    style="--score: {{ result.score }}%;"
-                >
-
-                    <div class="score-inner">
-
-                        <span>
-                            {{ result.score }}%
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <h3>
-                    Overall Resume Match
-                </h3>
-
-                <p>
-                    Your resume compatibility with this job
-                </p>
-
-            </div>
-
-
-            <!-- =========================
-                 SCORE GRID
-            ========================== -->
-
-            <div class="score-grid">
-
-
-                <div class="score-card">
-
-                    <div class="score-card-icon">
-                        🛠️
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Skill Match
-                        </h3>
-
-                        <strong>
-                            {{ result.skill_score }}%
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <div class="score-card">
-
-                    <div class="score-card-icon">
-                        🧠
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Text Similarity
-                        </h3>
-
-                        <strong>
-                            {{ result.similarity }}%
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <!-- =========================
-                 MATCHED SKILLS
-            ========================== -->
-
-            <div class="result-section matched-section">
-
-                <div class="result-section-title">
-
-                    <span class="green-dot"></span>
-
-                    <h3>
-                        Matched Skills
-                    </h3>
-
-                </div>
-
-
-                {% if result.matched %}
-
-                <div class="skills">
-
-                    {% for skill in result.matched %}
-
-                    <span class="skill matched">
-                        {{ skill }}
-                    </span>
-
-                    {% endfor %}
-
-                </div>
-
-                {% else %}
-
-                <p class="empty-message">
-                    No matched skills found.
-                </p>
-
-                {% endif %}
-
-            </div>
-
-
-            <!-- =========================
-                 MISSING SKILLS
-            ========================== -->
-
-            <div class="result-section missing-section">
-
-                <div class="result-section-title">
-
-                    <span class="red-dot"></span>
-
-                    <h3>
-                        Missing Skills
-                    </h3>
-
-                </div>
-
-
-                {% if result.missing %}
-
-                <div class="skills">
-
-                    {% for skill in result.missing %}
-
-                    <span class="skill missing">
-                        {{ skill }}
-                    </span>
-
-                    {% endfor %}
-
-                </div>
-
-                {% else %}
-
-                <p class="empty-message">
-                    No missing skills found 🎉
-                </p>
-
-                {% endif %}
-
-            </div>
-
-
-            <!-- =========================
-                 STRENGTHS
-            ========================== -->
-
-            <div class="analysis-card strengths">
-
-                <div class="analysis-title">
-
-                    <span>
-                        💪
-                    </span>
-
-                    <h3>
-                        Resume Strengths
-                    </h3>
-
-                </div>
-
-
-                {% for strength in result.strengths %}
-
-                <p>
-                    <span>✓</span>
-                    {{ strength }}
-                </p>
-
-                {% endfor %}
-
-            </div>
-
-
-            <!-- =========================
-                 WEAKNESSES
-            ========================== -->
-
-            <div class="analysis-card weaknesses">
-
-                <div class="analysis-title">
-
-                    <span>
-                        ⚠️
-                    </span>
-
-                    <h3>
-                        Resume Weaknesses
-                    </h3>
-
-                </div>
-
-
-                {% for weakness in result.weaknesses %}
-
-                <p>
-                    <span>•</span>
-                    {{ weakness }}
-                </p>
-
-                {% endfor %}
-
-            </div>
-
-
-            <!-- =========================
-                 RECOMMENDATIONS
-            ========================== -->
-
-            <div class="suggestions">
-
-                <div class="analysis-title">
-
-                    <span>
-                        💡
-                    </span>
-
-                    <h3>
-                        Recommendations
-                    </h3>
-
-                </div>
-
-
-                {% for suggestion in result.suggestions %}
-
-                <p>
-                    • {{ suggestion }}
-                </p>
-
-                {% endfor %}
-
-            </div>
-
-
-            <!-- =========================
-                 DOWNLOAD REPORT
-            ========================== -->
-
-            <form
-                action="/download-report"
-                method="POST"
-                class="download-form"
-            >
-
-
-                <input
-                    type="hidden"
-                    name="role"
-                    value="{{ result.role }}"
-                >
-
-
-                <input
-                    type="hidden"
-                    name="score"
-                    value="{{ result.score }}"
-                >
-
-
-                <input
-                    type="hidden"
-                    name="skill_score"
-                    value="{{ result.skill_score }}"
-                >
-
-
-                <input
-                    type="hidden"
-                    name="similarity"
-                    value="{{ result.similarity }}"
-                >
-
-
-                {% for skill in result.matched %}
-
-                <input
-                    type="hidden"
-                    name="matched"
-                    value="{{ skill }}"
-                >
-
-                {% endfor %}
-
-
-                {% for skill in result.missing %}
-
-                <input
-                    type="hidden"
-                    name="missing"
-                    value="{{ skill }}"
-                >
-
-                {% endfor %}
-
-
-                {% for strength in result.strengths %}
-
-                <input
-                    type="hidden"
-                    name="strengths"
-                    value="{{ strength }}"
-                >
-
-                {% endfor %}
-
-
-                {% for weakness in result.weaknesses %}
-
-                <input
-                    type="hidden"
-                    name="weaknesses"
-                    value="{{ weakness }}"
-                >
-
-                {% endfor %}
-
-
-                {% for suggestion in result.suggestions %}
-
-                <input
-                    type="hidden"
-                    name="suggestions"
-                    value="{{ suggestion }}"
-                >
-
-                {% endfor %}
-
-
-                <button
-                    type="submit"
-                    class="download-button"
-                >
-
-                    📥 Download Analysis Report
-
-                </button>
-
-            </form>
-
-
-        </section>
-
-        {% endif %}
-
-
-    </main>
+    </div>
 
 
     <!-- =========================
-         FOOTER
-    ========================== -->
+         SCORE AREA
+    ========================= -->
 
-    <footer>
+    <div class="score-area">
+
+
+        <!-- CIRCULAR SCORE -->
+
+        <div class="score-wrapper">
+
+            <div
+                class="score-circle"
+                style="--score: {{ result.score }}%;"
+            >
+
+                <div class="score-inner">
+
+                    <strong>
+                        {{ result.score }}%
+                    </strong>
+
+                    <span>
+                        Match Score
+                    </span>
+
+                </div>
+
+            </div>
+
+            {% if result.score >= 80 %}
+
+                <div class="score-status excellent">
+                    🏆 Excellent Match!
+                </div>
+
+            {% elif result.score >= 60 %}
+
+                <div class="score-status good">
+                    ⭐ Good Match
+                </div>
+
+            {% elif result.score >= 40 %}
+
+                <div class="score-status average">
+                    👍 Fair Match
+                </div>
+
+            {% else %}
+
+                <div class="score-status low">
+                    💡 Room for Improvement
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- SCORE CARDS -->
+
+        <div class="score-details">
+
+            <div class="metric-card">
+
+                <div class="metric-icon">
+                    🛠️
+                </div>
+
+                <div>
+
+                    <span>
+                        Skill Match
+                    </span>
+
+                    <strong>
+                        {{ result.skill_score }}%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <span>
+                        Text Similarity
+                    </span>
+
+                    <strong>
+                        {{ result.similarity }}%
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <div class="skills-grid">
+
+
+        <!-- MATCHED -->
+
+        <div class="skill-panel matched-panel">
+
+            <div class="panel-title">
+
+                <span class="green-dot"></span>
+
+                <h3>
+                    Matched Skills
+                </h3>
+
+            </div>
+
+
+            {% if result.matched %}
+
+            <div class="skill-list">
+
+                {% for skill in result.matched %}
+
+                <span class="skill-tag matched">
+                    ✓ {{ skill }}
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <p class="empty-message">
+                No matched skills found.
+            </p>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- MISSING -->
+
+        <div class="skill-panel missing-panel">
+
+            <div class="panel-title">
+
+                <span class="red-dot"></span>
+
+                <h3>
+                    Missing Skills
+                </h3>
+
+            </div>
+
+
+            {% if result.missing %}
+
+            <div class="skill-list">
+
+                {% for skill in result.missing %}
+
+                <span class="skill-tag missing">
+                    + {{ skill }}
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <p class="empty-message">
+                No missing skills found 🎉
+            </p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         STRENGTHS / WEAKNESSES
+    ========================= -->
+
+    <div class="analysis-grid">
+
+
+        <div class="info-card strengths">
+
+            <div class="info-heading">
+
+                <span>💪</span>
+
+                <h3>
+                    Resume Strengths
+                </h3>
+
+            </div>
+
+
+            {% for strength in result.strengths %}
+
+            <p>
+                ✓ {{ strength }}
+            </p>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="info-card weaknesses">
+
+            <div class="info-heading">
+
+                <span>⚠️</span>
+
+                <h3>
+                    Resume Weaknesses
+                </h3>
+
+            </div>
+
+
+            {% for weakness in result.weaknesses %}
+
+            <p>
+                • {{ weakness }}
+            </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         RECOMMENDATIONS
+    ========================= -->
+
+    <div class="recommendations">
+
+        <div class="recommendation-heading">
+
+            <span>💡</span>
+
+            <div>
+
+                <h3>
+                    Recommendations
+                </h3>
+
+                <p>
+                    Improve your resume for better job matching
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="recommendation-list">
+
+            {% for suggestion in result.suggestions %}
+
+            <div class="recommendation-item">
+
+                <span>✓</span>
+
+                <p>
+                    {{ suggestion }}
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         DOWNLOAD
+    ========================= -->
+
+    <form
+        action="/download-report"
+        method="POST"
+        class="download-form"
+    >
+
+        <input
+            type="hidden"
+            name="role"
+            value="{{ result.role }}"
+        >
+
+        <input
+            type="hidden"
+            name="score"
+            value="{{ result.score }}"
+        >
+
+        <input
+            type="hidden"
+            name="skill_score"
+            value="{{ result.skill_score }}"
+        >
+
+        <input
+            type="hidden"
+            name="similarity"
+            value="{{ result.similarity }}"
+        >
+
+
+        {% for skill in result.matched %}
+
+        <input
+            type="hidden"
+            name="matched"
+            value="{{ skill }}"
+        >
+
+        {% endfor %}
+
+
+        {% for skill in result.missing %}
+
+        <input
+            type="hidden"
+            name="missing"
+            value="{{ skill }}"
+        >
+
+        {% endfor %}
+
+
+        {% for strength in result.strengths %}
+
+        <input
+            type="hidden"
+            name="strengths"
+            value="{{ strength }}"
+        >
+
+        {% endfor %}
+
+
+        {% for weakness in result.weaknesses %}
+
+        <input
+            type="hidden"
+            name="weaknesses"
+            value="{{ weakness }}"
+        >
+
+        {% endfor %}
+
+
+        {% for suggestion in result.suggestions %}
+
+        <input
+            type="hidden"
+            name="suggestions"
+            value="{{ suggestion }}"
+        >
+
+        {% endfor %}
+
+
+        <button
+            type="submit"
+            class="download-button"
+        >
+
+            📥 Download Analysis Report
+
+        </button>
+
+    </form>
+
+</section>
+
+{% endif %}
+
+
+<!-- =========================
+     BOTTOM FEATURES
+========================= -->
+
+<section class="bottom-features">
+
+    <div>
+
+        <span>🧠</span>
+
+        <h3>
+            AI POWERED
+        </h3>
 
         <p>
-            ResumeMatch AI • Smart Resume Analysis
+            Smart Resume Analysis
         </p>
 
-    </footer>
+    </div>
 
-</div>
+
+    <div>
+
+        <span>🎯</span>
+
+        <h3>
+            BEST MATCH
+        </h3>
+
+        <p>
+            Get Matched Accurately
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <span>📈</span>
+
+        <h3>
+            IMPROVE & SCORE
+        </h3>
+
+        <p>
+            Actionable Suggestions
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <span>⚡</span>
+
+        <h3>
+            FAST & EASY
+        </h3>
+
+        <p>
+            Simple & Intuitive UI
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    ResumeMatch AI • Smart Resume Analysis
+
+</footer>
 
 
 </body>
