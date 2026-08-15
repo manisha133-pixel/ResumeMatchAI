@@ -1,12 +1,10 @@
-```html
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ResumeMatch AI</title>
 
@@ -14,148 +12,316 @@
           href="{{ url_for('static', filename='style.css') }}">
 </head>
 
+
 <body>
 
-<div class="container">
+<div class="page">
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-    <div class="header">
+    <header class="header">
 
-        <h1>ResumeMatch AI</h1>
+        <div class="brand">
+            <div class="brand-icon">✓</div>
+
+            <div>
+                <h1>ResumeMatch AI</h1>
+                <p>Resume Analyzer & Job Matcher</p>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero">
+
+        <h2>
+            Match Your Resume
+            <span>With Your Dream Job</span>
+        </h2>
 
         <p>
-            Analyze your resume. Match your skills.
-            Improve your career.
+            Upload your resume and compare it with a job description
+            to discover your skill match, missing skills and improvement areas.
         </p>
 
-    </div>
+    </section>
 
 
-    <!-- MAIN CARD -->
+    <!-- =========================
+         MAIN CARD
+    ========================== -->
 
-    <div class="card">
+    <main class="main-card">
 
-        <!-- FORM -->
+        <!-- =========================
+             FORM
+        ========================== -->
 
         <form method="POST"
               enctype="multipart/form-data">
 
-            <h2>📄 Upload Your Resume</h2>
 
-            <p class="subtitle">
-                Upload your resume in PDF format
-            </p>
+            <!-- RESUME UPLOAD -->
 
-            <input
-                type="file"
-                name="resume"
-                accept=".pdf"
-                required
+            <div class="form-section">
+
+                <div class="section-heading">
+
+                    <div class="heading-icon resume-icon">
+                        📄
+                    </div>
+
+                    <div>
+                        <h3>Upload Your Resume</h3>
+
+                        <p>
+                            Upload your resume in PDF format.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <label class="upload-box">
+
+                    <input
+                        type="file"
+                        name="resume"
+                        accept=".pdf"
+                        required
+                    >
+
+                    <div class="upload-content">
+
+                        <div class="upload-icon">
+                            ↑
+                        </div>
+
+                        <h4>
+                            Choose your resume
+                        </h4>
+
+                        <p>
+                            PDF files only
+                        </p>
+
+                        <span class="browse-button">
+                            Browse File
+                        </span>
+
+                    </div>
+
+                </label>
+
+            </div>
+
+
+            <!-- JOB DESCRIPTION -->
+
+            <div class="form-section">
+
+                <div class="section-heading">
+
+                    <div class="heading-icon job-icon">
+                        💼
+                    </div>
+
+                    <div>
+                        <h3>Job Description</h3>
+
+                        <p>
+                            Paste the job description below.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <textarea
+                    name="job_description"
+                    placeholder="Paste the job description here..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- ANALYZE BUTTON -->
+
+            <button
+                type="submit"
+                class="analyze-button"
             >
 
+                <span>Analyze Resume</span>
 
-            <h2>📝 Paste Job Description</h2>
+                <span class="arrow">
+                    →
+                </span>
 
-            <textarea
-                name="job_description"
-                placeholder="Paste the job description here..."
-                required
-            ></textarea>
-
-
-            <button type="submit">
-                🔍 Analyze Resume
             </button>
 
         </form>
 
 
-        <!-- RESULTS -->
+        <!-- =========================
+             RESULTS
+        ========================== -->
 
         {% if result %}
 
-        <div class="results">
-
-            <h2>
-                📊 Resume Analysis
-            </h2>
+        <section class="results">
 
 
-            <!-- JOB ROLE -->
+            <div class="results-title">
+
+                <div class="result-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <h2>
+                        Resume Analysis
+                    </h2>
+
+                    <p>
+                        Here's how well your resume matches the job.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 DETECTED JOB ROLE
+            ========================== -->
 
             <div class="role-card">
 
-                <p>
-                    🎯 Detected Job Role
-                </p>
-
-                <h3>
-                    {{ result.role }}
-                </h3>
-
-            </div>
-
-
-            <!-- CIRCULAR FINAL SCORE -->
-
-            <div class="score-circle"
-                 style="--score: {{ result.score }}%;">
-
-                <div class="score-inner">
+                <div>
 
                     <span>
-                        {{ result.score }}%
+                        🎯 Detected Job Role
                     </span>
+
+                    <h3>
+                        {{ result.role }}
+                    </h3>
 
                 </div>
 
             </div>
 
-            <p class="score-text">
-                Overall Resume Match Score
-            </p>
+
+            <!-- =========================
+                 OVERALL SCORE
+            ========================== -->
+
+            <div class="overall-score">
+
+                <div
+                    class="score-circle"
+                    style="--score: {{ result.score }}%;"
+                >
+
+                    <div class="score-inner">
+
+                        <span>
+                            {{ result.score }}%
+                        </span>
+
+                    </div>
+
+                </div>
 
 
-            <!-- SCORE GRID -->
+                <h3>
+                    Overall Resume Match
+                </h3>
+
+                <p>
+                    Your resume compatibility with this job
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 SCORE GRID
+            ========================== -->
 
             <div class="score-grid">
 
+
                 <div class="score-card">
 
-                    <h3>
-                        🛠️ Skill Match
-                    </h3>
+                    <div class="score-card-icon">
+                        🛠️
+                    </div>
 
-                    <strong>
-                        {{ result.skill_score }}%
-                    </strong>
+                    <div>
+
+                        <h3>
+                            Skill Match
+                        </h3>
+
+                        <strong>
+                            {{ result.skill_score }}%
+                        </strong>
+
+                    </div>
 
                 </div>
 
 
                 <div class="score-card">
 
-                    <h3>
-                        🧠 Text Similarity
-                    </h3>
+                    <div class="score-card-icon">
+                        🧠
+                    </div>
 
-                    <strong>
-                        {{ result.similarity }}%
-                    </strong>
+                    <div>
+
+                        <h3>
+                            Text Similarity
+                        </h3>
+
+                        <strong>
+                            {{ result.similarity }}%
+                        </strong>
+
+                    </div>
 
                 </div>
+
 
             </div>
 
 
-            <!-- MATCHED SKILLS -->
+            <!-- =========================
+                 MATCHED SKILLS
+            ========================== -->
 
-            <div class="result-section">
+            <div class="result-section matched-section">
 
-                <h3>
-                    🟢 Matched Skills
-                </h3>
+                <div class="result-section-title">
+
+                    <span class="green-dot"></span>
+
+                    <h3>
+                        Matched Skills
+                    </h3>
+
+                </div>
 
 
                 {% if result.matched %}
@@ -174,7 +340,7 @@
 
                 {% else %}
 
-                <p>
+                <p class="empty-message">
                     No matched skills found.
                 </p>
 
@@ -183,13 +349,21 @@
             </div>
 
 
-            <!-- MISSING SKILLS -->
+            <!-- =========================
+                 MISSING SKILLS
+            ========================== -->
 
-            <div class="result-section">
+            <div class="result-section missing-section">
 
-                <h3>
-                    🔴 Missing Skills
-                </h3>
+                <div class="result-section-title">
+
+                    <span class="red-dot"></span>
+
+                    <h3>
+                        Missing Skills
+                    </h3>
+
+                </div>
 
 
                 {% if result.missing %}
@@ -208,7 +382,7 @@
 
                 {% else %}
 
-                <p>
+                <p class="empty-message">
                     No missing skills found 🎉
                 </p>
 
@@ -217,19 +391,30 @@
             </div>
 
 
-            <!-- STRENGTHS -->
+            <!-- =========================
+                 STRENGTHS
+            ========================== -->
 
             <div class="analysis-card strengths">
 
-                <h3>
-                    💪 Resume Strengths
-                </h3>
+                <div class="analysis-title">
+
+                    <span>
+                        💪
+                    </span>
+
+                    <h3>
+                        Resume Strengths
+                    </h3>
+
+                </div>
 
 
                 {% for strength in result.strengths %}
 
                 <p>
-                    ✓ {{ strength }}
+                    <span>✓</span>
+                    {{ strength }}
                 </p>
 
                 {% endfor %}
@@ -237,19 +422,30 @@
             </div>
 
 
-            <!-- WEAKNESSES -->
+            <!-- =========================
+                 WEAKNESSES
+            ========================== -->
 
             <div class="analysis-card weaknesses">
 
-                <h3>
-                    ⚠️ Resume Weaknesses
-                </h3>
+                <div class="analysis-title">
+
+                    <span>
+                        ⚠️
+                    </span>
+
+                    <h3>
+                        Resume Weaknesses
+                    </h3>
+
+                </div>
 
 
                 {% for weakness in result.weaknesses %}
 
                 <p>
-                    • {{ weakness }}
+                    <span>•</span>
+                    {{ weakness }}
                 </p>
 
                 {% endfor %}
@@ -257,13 +453,23 @@
             </div>
 
 
-            <!-- RECOMMENDATIONS -->
+            <!-- =========================
+                 RECOMMENDATIONS
+            ========================== -->
 
             <div class="suggestions">
 
-                <h3>
-                    💡 Recommendations
-                </h3>
+                <div class="analysis-title">
+
+                    <span>
+                        💡
+                    </span>
+
+                    <h3>
+                        Recommendations
+                    </h3>
+
+                </div>
 
 
                 {% for suggestion in result.suggestions %}
@@ -277,7 +483,9 @@
             </div>
 
 
-            <!-- DOWNLOAD REPORT -->
+            <!-- =========================
+                 DOWNLOAD REPORT
+            ========================== -->
 
             <form
                 action="/download-report"
@@ -285,11 +493,13 @@
                 class="download-form"
             >
 
+
                 <input
                     type="hidden"
                     name="role"
                     value="{{ result.role }}"
                 >
+
 
                 <input
                     type="hidden"
@@ -297,11 +507,13 @@
                     value="{{ result.score }}"
                 >
 
+
                 <input
                     type="hidden"
                     name="skill_score"
                     value="{{ result.skill_score }}"
                 >
+
 
                 <input
                     type="hidden"
@@ -369,21 +581,37 @@
                     type="submit"
                     class="download-button"
                 >
+
                     📥 Download Analysis Report
+
                 </button>
 
             </form>
 
 
-        </div>
+        </section>
 
         {% endif %}
 
-    </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            ResumeMatch AI • Smart Resume Analysis
+        </p>
+
+    </footer>
 
 </div>
+
 
 </body>
 
 </html>
-```
